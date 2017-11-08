@@ -1,7 +1,3 @@
-## Loria
-
-Loria is an on premise, highly modulable, inteligent and very personal assistant.
-
 ### On premise
 
 Loria is hosted on your personal computer or server, it won't send any personal data to anyone. 
