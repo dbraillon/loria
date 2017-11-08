@@ -1,3 +1,5 @@
+## Hi I'm Loria
+
 ### On premise
 
 Loria is hosted on your personal computer or server, it won't send any personal data to anyone. 
@@ -14,10 +16,10 @@ All modules are available to download with pre-installed nuget module from [nuge
 
 As Loria works with modules, every Loria is different. Start building your own now!
 
-## Contributing
+### Contributing
 
 Yet to build.
 
-## Support or Contact
+### Support or Contact
 
 Yet to build.
