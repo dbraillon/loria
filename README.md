@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+## Loria
 
-You can use the [editor on GitHub](https://github.com/dbraillon/loria/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Loria is an on premise, highly modulable, inteligent and very personal assistant.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### On premise
 
-### Markdown
+Loria is hosted on your personal computer or server, it won't send any personal data to anyone. Actually, it won't send any data at all. It could work without Internet if you'd like so!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Highly modulable
 
-```markdown
-Syntax highlighted code block
+Loria works with modules and by building modules, you can hack Loria to the core! 
 
-# Header 1
-## Header 2
-### Header 3
+All modules are available to download with pre-installed nuget module from [nuget.loria.io](http://nuget.loria.io/).
 
-- Bulleted
-- List
+### Inteligent and very personal assistant
 
-1. Numbered
-2. List
+As Loria works with modules, every Loria is different. Start building your own now!
 
-**Bold** and _Italic_ and `Code` text
+## Contributing
 
-[Link](url) and ![Image](src)
-```
+Yet to build.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Support or Contact
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dbraillon/loria/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Yet to build.
