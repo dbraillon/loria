@@ -1,4 +1,4 @@
-## Hi I'm Loria
+## Loria
 
 ### On premise
 
