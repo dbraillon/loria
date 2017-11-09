@@ -6,25 +6,24 @@ using System.Reflection;
 
 namespace Loria.Core.Modules
 {
-    public class ModuleFactory : IModuleFactory
+    public class ModuleFactory
     {
-        protected DirectoryInfo Dir { get; set; }
-        protected List<Assembly> Assemblies { get; set; }
-        protected List<IModule> Items { get; set; }
+        public Engine Engine { get; set; }
+        public DirectoryInfo Dir { get; set; }
+        public List<Assembly> Assemblies { get; set; }
+        public List<IModule> Items { get; set; }
 
-        public ModuleFactory()
+        public ModuleFactory(Engine engine)
         {
+            Engine = engine;
+
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             Reload();
         }
-
-        public List<IModule> GetAll()
+        
+        public List<TModule> GetAll<TModule>()
         {
-            return Items;
-        }
-        public IModule Get(string name)
-        {
-            return Items.FirstOrDefault(m => m.Name == name);
+            return Items.Where(m => typeof(TModule).IsAssignableFrom(m.GetType())).OfType<TModule>().ToList();
         }
 
         public void Reload()
@@ -77,7 +76,7 @@ namespace Loria.Core.Modules
                     typeof(IModule).IsAssignableFrom(t) &&
                     t.IsClass && !t.IsAbstract
                 )
-                .Select(t => Activator.CreateInstance(t))
+                .Select(t => Activator.CreateInstance(t, Engine))
                 .OfType<IModule>();
         }
 

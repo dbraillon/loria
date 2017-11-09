@@ -1,4 +1,5 @@
-﻿using Loria.Core.Modules;
+﻿using Loria.Core;
+using Loria.Core.Actions.Messengers;
 using System;
 
 namespace Loria
@@ -7,10 +8,12 @@ namespace Loria
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var engine = new Engine();
+            engine.LiveAsync();
 
-            var moduleFactory = new ModuleFactory();
-            moduleFactory.GetAll().ForEach(m => Console.WriteLine($"Loaded {m.Name}"));
+            engine.ModuleFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Description}"));
+            engine.MessengerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Action}"));
+            engine.MessengerFactory.Items.ForEach(m => m.Perform(new MessengerCommand("send console Test command!")));
 
             Console.ReadLine();
         }
