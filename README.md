@@ -1,5 +1,3 @@
-## Loria
-
 ### Highly modulable
 
 Loria works with modules and by building modules, you can hack Loria to the core! 
