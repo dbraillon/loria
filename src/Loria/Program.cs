@@ -1,6 +1,7 @@
 ﻿using Loria.Core;
 using Loria.Core.Actions.Messengers;
 using System;
+using System.Threading;
 
 namespace Loria
 {
@@ -11,11 +12,19 @@ namespace Loria
             var engine = new Engine();
             engine.LiveAsync();
 
+            Console.WriteLine("Modules loaded:");
             engine.ModuleFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Description}"));
-            engine.MessengerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Action}"));
-            engine.MessengerFactory.Items.ForEach(m => m.Perform(new MessengerCommand("send console Test command!")));
 
-            Console.ReadLine();
+            Console.WriteLine("Messengers loaded:");
+            engine.MessengerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Action}"));
+
+            Console.WriteLine("Listeners loaded:");
+            engine.ListenerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name}"));
+
+            while (true)
+            {
+                Thread.Sleep(1000);
+            }
         }
     }
 }

@@ -10,5 +10,11 @@ namespace Loria.Core.Actions.Messengers
         {
             Message = string.Join(" ", Splitted.Skip(2));
         }
+
+        public static bool IsRelated(string raw)
+        {
+            var command = new MessengerCommand(raw);
+            return command.Type == "send";
+        }
     }
 }

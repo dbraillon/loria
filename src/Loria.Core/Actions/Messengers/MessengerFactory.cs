@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Loria.Core.Actions.Messengers
 {
@@ -11,6 +12,15 @@ namespace Loria.Core.Actions.Messengers
         {
             Engine = engine;
             Items = Engine.ModuleFactory.GetAll<IMessenger>();
+        }
+
+        public void Perform(MessengerCommand command)
+        {
+            var messenger = Items.FirstOrDefault(m => m.Action == command.Action);
+            if (messenger != null)
+            {
+                messenger.Perform(command);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Loria.Core.Actions.Messengers;
+using System.Linq;
 
 namespace Loria.Core.Actions
 {
@@ -10,13 +11,21 @@ namespace Loria.Core.Actions
         public string Type { get; set; }
         public string Action { get; set; }
 
-        public Command(string raw)
+        protected Command(string raw)
         {
             Raw = raw;
             Splitted = Raw.Split(' ');
 
             Type = Splitted.ElementAtOrDefault(0);
             Action = Splitted.ElementAtOrDefault(1);
+        }
+
+        public static Command Parse(string raw)
+        {
+            if (MessengerCommand.IsRelated(raw))
+                return new MessengerCommand(raw);
+
+            return null;
         }
     }
 }
