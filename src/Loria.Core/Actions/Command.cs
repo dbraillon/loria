@@ -1,4 +1,5 @@
-﻿using Loria.Core.Actions.Messengers;
+﻿using Loria.Core.Actions.Activities;
+using Loria.Core.Actions.Messengers;
 using System.Linq;
 
 namespace Loria.Core.Actions
@@ -22,9 +23,12 @@ namespace Loria.Core.Actions
 
         public static Command Parse(string raw)
         {
+            if (ActivityCommand.IsRelated(raw))
+                return new ActivityCommand(raw);
+
             if (MessengerCommand.IsRelated(raw))
                 return new MessengerCommand(raw);
-
+            
             return null;
         }
     }

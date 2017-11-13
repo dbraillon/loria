@@ -1,6 +1,7 @@
 ﻿using Loria.Core;
 using Loria.Core.Actions.Messengers;
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Loria
@@ -12,15 +13,18 @@ namespace Loria
             var engine = new Engine();
             engine.LiveAsync();
 
-            Console.WriteLine("Modules loaded:");
-            engine.ModuleFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Description}"));
+            Debug.WriteLine("Modules loaded:");
+            engine.ModuleFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Description}"));
 
-            Console.WriteLine("Messengers loaded:");
-            engine.MessengerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name} - {m.Action}"));
+            Debug.WriteLine("Activities loaded:");
+            engine.ActivityFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
 
-            Console.WriteLine("Listeners loaded:");
-            engine.ListenerFactory.Items.ForEach(m => Console.WriteLine($"{m.Name}"));
+            Debug.WriteLine("Messengers loaded:");
+            engine.MessengerFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
 
+            Debug.WriteLine("Listeners loaded:");
+            engine.ListenerFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name}"));
+            
             while (true)
             {
                 Thread.Sleep(1000);

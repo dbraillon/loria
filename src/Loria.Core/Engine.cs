@@ -1,4 +1,5 @@
-﻿using Loria.Core.Actions.Messengers;
+﻿using Loria.Core.Actions.Activities;
+using Loria.Core.Actions.Messengers;
 using Loria.Core.Listeners;
 using Loria.Core.Modules;
 using Loria.Core.Propagators;
@@ -11,6 +12,7 @@ namespace Loria.Core
         public bool IsLiving { get; private set; }
 
         public ModuleFactory ModuleFactory { get; set; }
+        public ActivityFactory ActivityFactory { get; set; }
         public MessengerFactory MessengerFactory { get; set; }
         public ListenerFactory ListenerFactory { get; set; }
         public Propagator Propagator { get; set; }
@@ -18,6 +20,7 @@ namespace Loria.Core
         public Engine()
         {
             ModuleFactory = new ModuleFactory(this);
+            ActivityFactory = new ActivityFactory(this);
             MessengerFactory = new MessengerFactory(this);
             ListenerFactory = new ListenerFactory(this);
             Propagator = new Propagator(this);

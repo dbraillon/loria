@@ -1,4 +1,5 @@
 ﻿using Loria.Core.Actions;
+using Loria.Core.Actions.Activities;
 using Loria.Core.Actions.Messengers;
 
 namespace Loria.Core.Propagators
@@ -16,10 +17,14 @@ namespace Loria.Core.Propagators
         {
             if (command == null) return;
 
+            if (command is ActivityCommand)
+                PropagateActivity(command as ActivityCommand);
+
             if (command is MessengerCommand)
                 PropagateMessenger(command as MessengerCommand);
         }
         
+        public void PropagateActivity(ActivityCommand command) => Engine.ActivityFactory.Perform(command);
         public void PropagateMessenger(MessengerCommand command) => Engine.MessengerFactory.Perform(command);
     }
 }

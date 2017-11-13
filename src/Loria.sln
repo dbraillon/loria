@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Core", "Loria.Core\Lo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{1675FA6C-DF85-4766-80AC-CCB39C11D4A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.Console", "Modules\Loria.Modules.Console\Loria.Modules.Console.csproj", "{8D089971-90FF-4E63-B489-27678B88779D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Modules.Console", "Modules\Loria.Modules.Console\Loria.Modules.Console.csproj", "{8D089971-90FF-4E63-B489-27678B88779D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria", "Loria\Loria.csproj", "{359ED0DC-611E-4333-985F-1C642BB9D169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria", "Loria\Loria.csproj", "{359ED0DC-611E-4333-985F-1C642BB9D169}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.Voice", "Modules\Loria.Modules.Voice\Loria.Modules.Voice.csproj", "{DAD7F835-4A5D-4E72-84F6-AF15C69C560C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.DateTime", "Modules\Loria.Modules.DateTime\Loria.Modules.DateTime.csproj", "{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{DAD7F835-4A5D-4E72-84F6-AF15C69C560C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD7F835-4A5D-4E72-84F6-AF15C69C560C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD7F835-4A5D-4E72-84F6-AF15C69C560C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8D089971-90FF-4E63-B489-27678B88779D} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
 		{DAD7F835-4A5D-4E72-84F6-AF15C69C560C} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
+		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {284ABE97-6B50-4022-AAA0-86D3ACD005CA}
