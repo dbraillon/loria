@@ -38,6 +38,11 @@ namespace Loria.Core.Modules
             Reload();
         }
         
+        public void ConfigureAll()
+        {
+            Items.ForEach(i => i.Configure());
+        }
+
         protected DirectoryInfo InitializeDirectory()
         {
             var directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "modules");

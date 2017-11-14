@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.PackageManagement.NetStandard" Version="4.3.0" />
+    <PackageReference Include="NuGet.Protocol" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Loria.Core\Loria.Core.csproj" />
+  </ItemGroup>
+
+</Project>

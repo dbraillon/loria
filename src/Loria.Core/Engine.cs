@@ -35,6 +35,7 @@ namespace Loria.Core
         public void LiveAsync()
         {
             IsLiving = true;
+            ModuleFactory.ConfigureAll();
             ListenerFactory.StartAll();
         }
 
