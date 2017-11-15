@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Loria.Core.Actions.Messengers
@@ -16,11 +17,16 @@ namespace Loria.Core.Actions.Messengers
 
         public void Perform(MessengerCommand command)
         {
-            var messenger = Items.FirstOrDefault(m => m.Action == command.Action);
+            var messenger = Get(command.Action);
             if (messenger != null)
             {
                 messenger.Perform(command);
             }
+        }
+        
+        public IMessenger Get(string action)
+        {
+            return Items.FirstOrDefault(i => string.Equals(i.Action, action, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

@@ -1,20 +1,13 @@
-﻿using System.Linq;
-
-namespace Loria.Core.Actions.Messengers
+﻿namespace Loria.Core.Actions.Messengers
 {
     public class MessengerCommand : Command
     {
         public string Message { get; set; }
 
-        public MessengerCommand(string raw) : base(raw)
+        public MessengerCommand(string action, string message) 
+            : base(CommandBuilder.MessengerKeyword, action)
         {
-            Message = string.Join(" ", Splitted.Skip(2));
-        }
-
-        public static bool IsRelated(string raw)
-        {
-            var command = new MessengerCommand(raw);
-            return command.Type == "send";
+            Message = message;
         }
     }
 }

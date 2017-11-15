@@ -1,4 +1,5 @@
-﻿using Loria.Core.Actions.Activities;
+﻿using Loria.Core.Actions;
+using Loria.Core.Actions.Activities;
 using Loria.Core.Actions.Messengers;
 using Loria.Core.Listeners;
 using Loria.Core.Modules;
@@ -16,6 +17,7 @@ namespace Loria.Core
         public MessengerFactory MessengerFactory { get; set; }
         public ListenerFactory ListenerFactory { get; set; }
         public Propagator Propagator { get; set; }
+        public CommandBuilder CommandBuilder { get; set; }
 
         public Engine()
         {
@@ -24,6 +26,7 @@ namespace Loria.Core
             MessengerFactory = new MessengerFactory(this);
             ListenerFactory = new ListenerFactory(this);
             Propagator = new Propagator(this);
+            CommandBuilder = new CommandBuilder(this);
         }
 
         public void Live()

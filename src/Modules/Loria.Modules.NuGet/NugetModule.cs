@@ -66,7 +66,7 @@ namespace Loria.Modules.NuGet
                     var searchMetadata = SearchResource.SearchAsync(textEntity.Value, new SearchFilter(false), 0, 10, null, CancellationToken.None).GetAwaiter().GetResult();
                     var message = string.Join(Environment.NewLine, searchMetadata.Select(m => $"{m.Title} - {m.Description}"));
                     
-                    Engine.Propagator.Propagate(Command.Parse($"send console {message}"));
+                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {message}"));
                     break;
 
                 case InstallIntent:

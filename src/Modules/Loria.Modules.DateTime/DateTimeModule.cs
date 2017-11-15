@@ -1,5 +1,4 @@
 ﻿using Loria.Core;
-using Loria.Core.Actions;
 using Loria.Core.Actions.Activities;
 using Loria.Core.Modules;
 using System.Globalization;
@@ -16,8 +15,8 @@ namespace Loria.Modules.DateTime
         public string[] SupportedIntents => new[] { DateIntent, TimeIntent };
         public string[] Samples => new[] 
         {
-            "perform datetime date",
-            "perform datetime time"
+            "datetime date",
+            "datetime time"
         };
 
         public const string DateIntent = "date";
@@ -41,13 +40,13 @@ namespace Loria.Modules.DateTime
                 case DateIntent:
 
                     var todayDate = System.DateTime.Now.ToString("D", CultureInfo.CurrentUICulture);
-                    Engine.Propagator.Propagate(Command.Parse($"send console {todayDate}"));
+                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {todayDate}"));
                     break;
 
                 case TimeIntent:
 
                     var todayTime = System.DateTime.Now.ToString("t", CultureInfo.CurrentUICulture);
-                    Engine.Propagator.Propagate(Command.Parse($"send console {todayTime}"));
+                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {todayTime}"));
                     break;
 
                 default:

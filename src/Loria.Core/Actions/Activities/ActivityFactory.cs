@@ -18,11 +18,16 @@ namespace Loria.Core.Actions.Activities
 
         public void Perform(ActivityCommand command)
         {
-            var activity = Items.FirstOrDefault(m => m.Action == command.Action);
+            var activity = Get(command.Action);
             if (activity != null)
             {
                 activity.Perform(command);
             }
+        }
+
+        public IActivity Get(string action)
+        {
+            return Items.FirstOrDefault(i => string.Equals(i.Action, action, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

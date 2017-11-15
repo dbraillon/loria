@@ -30,7 +30,7 @@ namespace Loria.Modules.Console
 
         public override Command Listen()
         {
-            return Command.Parse(System.Console.ReadLine());
+            return Engine.CommandBuilder.Parse(System.Console.ReadLine());
         }
     }
 }
