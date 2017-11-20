@@ -21,13 +21,15 @@ namespace Loria.Modules.NuGet
 
         public string Action => "nuget";
         public string[] SupportedIntents => new[] { SearchIntent, InstallIntent, UpdateIntent };
-        public string[] Samples => throw new NotImplementedException();
+        public string[] Samples => new[]
+        {
+            "nuget search datetime",
+            "nuget install datetime"
+        };
 
         public const string SearchIntent = "search";
         public const string InstallIntent = "install";
         public const string UpdateIntent = "update";
-        public const string TextEntity = "text";
-        public const string PackageEntity = "package";
 
         public SourceRepository SourceRepository { get; set; }
         public PackageSearchResource SearchResource { get; set; }
@@ -58,39 +60,32 @@ namespace Loria.Modules.NuGet
 
         public void Perform(ActivityCommand command)
         {
-            switch (command.Intent)
+            var defaultEntity = command.Entities.First();
+
+            if (command.Intent == SearchIntent)
             {
-                case SearchIntent:
+                var searchMetadata = SearchResource.SearchAsync(defaultEntity.Value, new SearchFilter(false), 0, 10, null, CancellationToken.None).GetAwaiter().GetResult();
+                var message = string.Join(Environment.NewLine, searchMetadata.Select(m => $"{m.Title} - {m.Description}"));
 
-                    var textEntity = command.Entities.FirstOrDefault(e => e.Name == TextEntity);
-                    var searchMetadata = SearchResource.SearchAsync(textEntity.Value, new SearchFilter(false), 0, 10, null, CancellationToken.None).GetAwaiter().GetResult();
-                    var message = string.Join(Environment.NewLine, searchMetadata.Select(m => $"{m.Title} - {m.Description}"));
-                    
-                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {message}"));
-                    break;
-
-                case InstallIntent:
-
-                    var packageEntity = command.Entities.FirstOrDefault(e => e.Name == PackageEntity);
-                    var packagesMetadata = MetadataResource.GetMetadataAsync(packageEntity.Value, false, false, new Logger(), CancellationToken.None).GetAwaiter().GetResult();
-                    var packageMetadata = packagesMetadata.LastOrDefault();
-
-                    var resolutionContext = new ResolutionContext(DependencyBehavior.Highest, false, false, VersionConstraints.None);
-
-                    PackageManager.InstallPackageAsync(
-                        PackageManager.PackagesFolderNuGetProject,
-                        packageMetadata.Identity,
-                        resolutionContext,
-                        new ProjectContext(),
-                        SourceRepository,
-                        Enumerable.Empty<SourceRepository>(),
-                        CancellationToken.None
-                    ).GetAwaiter().GetResult();
-
-                    break;
+                Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {message}"));
             }
+            else if (command.Intent == InstallIntent)
+            {
+                var packagesMetadata = MetadataResource.GetMetadataAsync(defaultEntity.Value, false, false, new Logger(), CancellationToken.None).GetAwaiter().GetResult();
+                var packageMetadata = packagesMetadata.LastOrDefault();
 
-            
+                var resolutionContext = new ResolutionContext(DependencyBehavior.Highest, false, false, VersionConstraints.None);
+                
+                PackageManager.InstallPackageAsync(
+                    PackageManager.PackagesFolderNuGetProject,
+                    packageMetadata.Identity,
+                    resolutionContext,
+                    new ProjectContext(),
+                    SourceRepository,
+                    Enumerable.Empty<SourceRepository>(),
+                    CancellationToken.None
+                ).GetAwaiter().GetResult();
+            }
         }
     }
 }
