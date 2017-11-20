@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Core", "Loria.Core\Loria.Core.csproj", "{8E101E1A-E3D7-42EA-B7F2-607BB53DF675}"
 EndProject
@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.Voice", "Modu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Modules.DateTime", "Modules\Loria.Modules.DateTime\Loria.Modules.DateTime.csproj", "{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.NuGet", "Modules\Loria.Modules.NuGet\Loria.Modules.NuGet.csproj", "{3CCB99D6-A845-431A-988F-67A1D676D110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Modules.NuGet", "Modules\Loria.Modules.NuGet\Loria.Modules.NuGet.csproj", "{3CCB99D6-A845-431A-988F-67A1D676D110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoriaNET", "LoriaNET\LoriaNET.csproj", "{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{3CCB99D6-A845-431A-988F-67A1D676D110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CCB99D6-A845-431A-988F-67A1D676D110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CCB99D6-A845-431A-988F-67A1D676D110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
