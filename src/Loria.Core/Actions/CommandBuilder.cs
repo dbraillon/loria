@@ -10,6 +10,7 @@ namespace Loria.Core.Actions
     {
         public const string ActivityKeyword = "perform";
         public const string MessengerKeyword = "send";
+        public const string EmptyEntityKey = "empty";
         public const char Separator = ' ';
 
         public Engine Engine { get; set; }
@@ -90,7 +91,10 @@ namespace Loria.Core.Actions
             var intent = strSplitted.ElementAtOrDefault(actionIndex + 1);
 
             var entitiesStr = strSplitted.Skip(actionIndex + 2);
-            var entities = new List<Entity>();
+            var entities = new List<Entity>
+            {
+                new Entity(EmptyEntityKey, string.Empty)
+            };
 
             foreach (var entityStr in entitiesStr)
             {
@@ -103,11 +107,8 @@ namespace Loria.Core.Actions
                 }
                 else
                 {
-                    var lastEntity = entities.LastOrDefault();
-                    if (lastEntity != null)
-                    {
-                        lastEntity.Value = $"{lastEntity.Value}{Separator}{entityStr}".Trim();
-                    }
+                    var lastEntity = entities.Last();
+                    lastEntity.Value = $"{lastEntity.Value}{Separator}{entityStr}".Trim(Separator);
                 }
             }
 
