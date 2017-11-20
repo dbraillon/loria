@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Loria</Authors>
+    <Company>Loria</Company>
+    <Product>Loria</Product>
+    <Description>It allows me to update my capabilities by downloading new modules.</Description>
+    <PackageProjectUrl>http://loria.io</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

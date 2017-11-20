@@ -1,5 +1,4 @@
 ﻿using Loria.Core;
-using Loria.Core.Actions;
 using Loria.Core.Actions.Activities;
 using Loria.Core.Modules;
 using NuGet.Configuration;
@@ -65,7 +64,15 @@ namespace Loria.Modules.NuGet
             if (command.Intent == SearchIntent)
             {
                 var searchMetadata = SearchResource.SearchAsync(defaultEntity.Value, new SearchFilter(false), 0, 10, null, CancellationToken.None).GetAwaiter().GetResult();
-                var message = string.Join(Environment.NewLine, searchMetadata.Select(m => $"{m.Title} - {m.Description}"));
+                var messages = searchMetadata.Select(m =>
+                {
+                    var title = m.Title;
+                    var desc = m.Description;
+                    var mess = $"{title} - {desc.Replace(Environment.NewLine, " ")}";
+
+                    return mess.Length > 120 ? mess.Substring(0, 110) + "..." : mess;
+                });
+                var message = string.Join(Environment.NewLine, messages);
 
                 Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {message}"));
             }

@@ -1,5 +1,6 @@
 ﻿using NuGet.Packaging;
 using NuGet.ProjectManagement;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace Loria.Modules.NuGet
@@ -8,7 +9,10 @@ namespace Loria.Modules.NuGet
     {
         public void Log(MessageLevel level, string message, params object[] args)
         {
-            // Do your logging here...
+            if (level != MessageLevel.Debug)
+            {
+                Debug.WriteLine(message, args);
+            }
         }
 
         public FileConflictAction ResolveFileConflict(string message) => FileConflictAction.Ignore;
