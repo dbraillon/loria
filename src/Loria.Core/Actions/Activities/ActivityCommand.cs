@@ -1,4 +1,7 @@
-﻿namespace Loria.Core.Actions.Activities
+﻿using System;
+using System.Linq;
+
+namespace Loria.Core.Actions.Activities
 {
     public class ActivityCommand : Command
     {
@@ -10,6 +13,11 @@
         {
             Intent = intent;
             Entities = entities;
+        }
+
+        public Entity GetEntity(string name)
+        {
+            return Entities?.FirstOrDefault(e => string.Equals(e.Name, name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

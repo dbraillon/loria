@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Modules.NuGet", "Modu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoriaNET", "LoriaNET\LoriaNET.csproj", "{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.Reminder", "Modules\Loria.Modules.Reminder\Loria.Modules.Reminder.csproj", "{1491236C-8D91-40AE-AA42-9AC12FD61A45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{326D51F3-F3D2-4EF1-A631-EE5201E5A6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{DAD7F835-4A5D-4E72-84F6-AF15C69C560C} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
 		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
 		{3CCB99D6-A845-431A-988F-67A1D676D110} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
+		{1491236C-8D91-40AE-AA42-9AC12FD61A45} = {1675FA6C-DF85-4766-80AC-CCB39C11D4A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {284ABE97-6B50-4022-AAA0-86D3ACD005CA}

@@ -40,7 +40,18 @@ namespace Loria.Core.Modules
         
         public void ConfigureAll()
         {
-            Items.ForEach(i => i.Configure());
+            foreach (var item in Items)
+            {
+                try
+                {
+                    item.Configure();
+                }
+                catch
+                {
+                    // Something went wrong while configuring a module
+                    // It will not be activated
+                }
+            }
         }
 
         protected DirectoryInfo InitializeDirectory()

@@ -22,6 +22,8 @@ namespace Loria.Core.Actions
 
         public Command Parse(string str)
         {
+            if (string.IsNullOrWhiteSpace(str)) return null;
+
             var strSplitted = str.Split(Separator);
             var firstArg = strSplitted.ElementAtOrDefault(0);
 
