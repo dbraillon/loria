@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Loria</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>Loria</Company>
+    <Description>It allows me to see what you type in console and to answer you there.</Description>
+    <PackageProjectUrl>http://loria.io</PackageProjectUrl>
+    <RepositoryUrl>http://loria.io</RepositoryUrl>
+    <Product>Loria</Product>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

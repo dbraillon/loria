@@ -1,5 +1,6 @@
 ﻿using Loria.Core;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 
 namespace LoriaNET
@@ -10,18 +11,18 @@ namespace LoriaNET
         {
             var engine = new Engine();
             engine.LiveAsync();
-
+            
             Debug.WriteLine("Modules loaded:");
-            engine.ModuleFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Description}"));
+            engine.ModuleFactory.Items.Where(i => i.IsEnabled()).ToList().ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Description}"));
 
             Debug.WriteLine("Activities loaded:");
-            engine.ActivityFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
+            engine.ActivityFactory.Items.Where(i => i.IsEnabled()).ToList().ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
 
             Debug.WriteLine("Messengers loaded:");
-            engine.MessengerFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
+            engine.MessengerFactory.Items.Where(i => i.IsEnabled()).ToList().ForEach(m => Debug.WriteLine($"  {m.Name.PadRight(15, ' ')}\t{m.Action}"));
 
             Debug.WriteLine("Listeners loaded:");
-            engine.ListenerFactory.Items.ForEach(m => Debug.WriteLine($"  {m.Name}"));
+            engine.ListenerFactory.Items.Where(i => i.IsEnabled()).ToList().ForEach(m => Debug.WriteLine($"  {m.Name}"));
 
             while (true)
             {

@@ -99,7 +99,16 @@ namespace Loria.Core.Modules
         protected Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
             var assemblyName = new AssemblyName(args.Name);
-            var assembly = Assemblies.FirstOrDefault(a => a.GetName().Name == assemblyName.Name);
+            var entryAssembly = Assembly.GetEntryAssembly();
+            var entryAssemblyDir = new DirectoryInfo(Path.GetDirectoryName(entryAssembly.Location));
+            var entryAssemblyDlls = entryAssemblyDir.EnumerateFiles("*.dll");
+
+            var assembly = 
+                Assemblies.FirstOrDefault(a => a.GetName().Name == assemblyName.Name) ??
+                entryAssemblyDlls
+                    .Where(dll => Path.GetFileNameWithoutExtension(dll.Name) == assemblyName.Name)
+                    .Select(dll => Assembly.LoadFile(dll.FullName))
+                    .FirstOrDefault();
 
             return assembly;
         }

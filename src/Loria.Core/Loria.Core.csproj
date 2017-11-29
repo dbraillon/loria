@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Loria</Authors>
+    <Company>Loria</Company>
+    <Product>Loria</Product>
+    <Description>It's the heart of Loria solution.</Description>
+    <PackageProjectUrl>http://loria.io</PackageProjectUrl>
+    <RepositoryUrl>http://loria.io</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
