@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Loria</Authors>
+    <Company>Loria</Company>
+    <Product>Loria</Product>
+    <Description>It allows me to give you current date and time.</Description>
+    <PackageProjectUrl>http://loria.io</PackageProjectUrl>
+    <RepositoryUrl>http://loria.io</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Loria.Core\Loria.Core.csproj" />
+  </ItemGroup>
+
+</Project>
