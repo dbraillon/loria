@@ -10,6 +10,7 @@ namespace Loria.Modules.Reminder
         public string Text { get; set; }
         public Event Event { get; set; }
 
+        public Alarm() { }
         public Alarm(string text, string time)
         {
             Id = Guid.NewGuid();

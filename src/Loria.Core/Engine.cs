@@ -4,6 +4,8 @@ using Loria.Core.Actions.Messengers;
 using Loria.Core.Listeners;
 using Loria.Core.Modules;
 using Loria.Core.Propagators;
+using Loria.Core.Storages;
+using Loria.Core.Storages.SQLite;
 using System.Threading;
 
 namespace Loria.Core
@@ -18,6 +20,7 @@ namespace Loria.Core
         public ListenerFactory ListenerFactory { get; set; }
         public Propagator Propagator { get; set; }
         public CommandBuilder CommandBuilder { get; set; }
+        public DatabaseStorage Storage { get; set; }
 
         public Engine()
         {
@@ -27,6 +30,8 @@ namespace Loria.Core
             ListenerFactory = new ListenerFactory(this);
             Propagator = new Propagator(this);
             CommandBuilder = new CommandBuilder(this);
+            Storage = new DatabaseStorage();
+            Storage.EnsureCreated();
         }
 
         public void Live()

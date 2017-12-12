@@ -26,12 +26,9 @@ namespace Loria.Modules.Reminder
         public const string TextEntity = "text";
         public const string TimeEntity = "time";
 
-        public List<Alarm> Alarms { get; set; }
-
         public ReminderModule(Engine engine) 
             : base(engine, 1000)
         {
-            Alarms = new List<Alarm>();
         }
         
         public override void Configure()
@@ -52,7 +49,8 @@ namespace Loria.Modules.Reminder
                     var timeEntity = command.GetEntity(TimeEntity);
                     if (timeEntity == null) throw new ArgumentNullException(TimeEntity);
 
-                    Alarms.Add(new Alarm(textEntity.Value, timeEntity.Value));
+                    var alarm = new Alarm(textEntity.Value, timeEntity.Value);
+                    Engine.Storage.Create(Name, alarm.Id.ToString(), alarm);
                     break;
 
                 default:
@@ -62,12 +60,11 @@ namespace Loria.Modules.Reminder
 
         public override Command Listen()
         {
-            var alarms = new List<Alarm>(Alarms);
-            foreach (var alarm in alarms)
+            foreach (var alarm in Engine.Storage.ReadAll<Alarm>(Name))
             {
                 if (alarm.Event.Check())
                 {
-                    Alarms.Remove(alarm);
+                    Engine.Storage.Delete(Name, alarm.Id.ToString());
                     return new MessengerCommand("console", alarm.Text);
                 }
             }
