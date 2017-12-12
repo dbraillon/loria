@@ -128,7 +128,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Loria.Core\Loria.Core.csproj">
+    <ProjectReference Include="..\..\netstandard20\Loria.Core\Loria.Core.csproj">
       <Project>{8e101e1a-e3d7-42ea-b7f2-607bb53df675}</Project>
       <Name>Loria.Core</Name>
     </ProjectReference>

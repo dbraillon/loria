@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Loria</Authors>
+    <Company>Loria</Company>
+    <Product>Loria</Product>
+    <PackageProjectUrl>http://loria.io</PackageProjectUrl>
+    <RepositoryUrl>http://loria.io</RepositoryUrl>
+    <Description>It allows me to remind you things you've told me.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Loria.Core\Loria.Core.csproj" />
+  </ItemGroup>
+
+</Project>
