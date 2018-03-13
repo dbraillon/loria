@@ -7,6 +7,7 @@
 
         public abstract string Name { get; }
         public abstract string Description { get; }
+        public abstract string Keywords { get; }
         
         public Module(Engine engine)
         {

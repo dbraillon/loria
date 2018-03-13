@@ -9,6 +9,7 @@ namespace Loria.Modules.DateTime
     {
         public override string Name => "Date and time module";
         public override string Description => "It allows me to give you current date and time";
+        public override string Keywords => "date time";
 
         public string Action => "datetime";
 
@@ -33,20 +34,20 @@ namespace Loria.Modules.DateTime
             Activate();
         }
 
-        public void Perform(ActivityCommand command)
+        public void Perform(ActivityCommand command, IModule sender)
         {
             switch (command.Intent)
             {
                 case DateIntent:
 
                     var todayDate = System.DateTime.Now.ToString("D", CultureInfo.CurrentUICulture);
-                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {todayDate}"));
+                    Engine.Propagator.PropagateMessenger(todayDate, sender);
                     break;
 
                 case TimeIntent:
 
                     var todayTime = System.DateTime.Now.ToString("t", CultureInfo.CurrentUICulture);
-                    Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {todayTime}"));
+                    Engine.Propagator.PropagateMessenger(todayTime, sender);
                     break;
 
                 default:

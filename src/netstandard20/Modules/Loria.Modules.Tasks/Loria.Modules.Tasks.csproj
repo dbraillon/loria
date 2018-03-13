@@ -5,17 +5,11 @@
     <Authors>Loria</Authors>
     <Company>Loria</Company>
     <Product>Loria</Product>
-    <Description>It allows me to update my capabilities by downloading new modules.</Description>
+    <Version>1.1.0</Version>
     <PackageProjectUrl>http://loria.io</PackageProjectUrl>
     <RepositoryUrl>http://loria.io</RepositoryUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Description>It allows me to create schedulable tasks.</Description>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NuGet.PackageManagement.NetStandard" Version="4.3.0" />
-    <PackageReference Include="NuGet.Protocol" Version="4.4.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Loria.Core\Loria.Core.csproj" />

@@ -9,6 +9,7 @@
     <PackageProjectUrl>http://loria.io</PackageProjectUrl>
     <RepositoryUrl>http://loria.io</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

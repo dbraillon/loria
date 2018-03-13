@@ -4,6 +4,7 @@
     {
         string Name { get; }
         string Description { get; }
+        string Keywords { get; }
 
         bool IsEnabled();
         void Configure();

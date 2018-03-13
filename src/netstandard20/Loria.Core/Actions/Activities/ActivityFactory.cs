@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loria.Core.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,12 @@ namespace Loria.Core.Actions.Activities
             Items = Engine.ModuleFactory.GetAll<IActivity>();
         }
 
-        public void Perform(ActivityCommand command)
+        public void Perform(ActivityCommand command, IModule sender)
         {
             var activity = Get(command.Action);
             if (activity != null)
             {
-                activity.Perform(command);
+                activity.Perform(command, sender);
             }
         }
 

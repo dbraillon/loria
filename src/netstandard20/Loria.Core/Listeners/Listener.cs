@@ -64,7 +64,7 @@ namespace Loria.Core.Listeners
                     var result = Listen();
                     if (result != null)
                     {
-                        Engine.Propagator.Propagate(result);
+                        Engine.Propagator.Propagate(result, this);
                     }
                 }
 

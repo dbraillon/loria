@@ -17,6 +17,7 @@ namespace Loria.Modules.NuGet
     {
         public override string Name => "NuGet module";
         public override string Description => "It allows me to update my capabilities by downloading new modules";
+        public override string Keywords => "nuget update";
 
         public string Action => "nuget";
         public string[] SupportedIntents => new[] { SearchIntent, InstallIntent, UpdateIntent };
@@ -57,7 +58,7 @@ namespace Loria.Modules.NuGet
             Activate();
         }
 
-        public void Perform(ActivityCommand command)
+        public void Perform(ActivityCommand command, IModule sender)
         {
             var defaultEntity = command.Entities.First();
 
@@ -74,7 +75,7 @@ namespace Loria.Modules.NuGet
                 });
                 var message = string.Join(Environment.NewLine, messages);
 
-                Engine.Propagator.Propagate(Engine.CommandBuilder.Parse($"send console {message}"));
+                Engine.Propagator.PropagateMessenger(message, sender);
             }
             else if (command.Intent == InstallIntent)
             {

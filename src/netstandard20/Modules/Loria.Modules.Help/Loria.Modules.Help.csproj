@@ -2,20 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0</Version>
     <Authors>Loria</Authors>
     <Company>Loria</Company>
     <Product>Loria</Product>
-    <Description>It allows me to update my capabilities by downloading new modules.</Description>
+    <Description>It allows me to give informations about my loaded modules.</Description>
     <PackageProjectUrl>http://loria.io</PackageProjectUrl>
     <RepositoryUrl>http://loria.io</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NuGet.PackageManagement.NetStandard" Version="4.3.0" />
-    <PackageReference Include="NuGet.Protocol" Version="4.4.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Loria.Core\Loria.Core.csproj" />

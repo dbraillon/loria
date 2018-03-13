@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Core", "netstandard20\Loria.Core\Loria.Core.csproj", "{8E101E1A-E3D7-42EA-B7F2-607BB53DF675}"
 EndProject
@@ -22,6 +22,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netstandard20", "netstandard20", "{8E111616-D249-45FC-9652-EB2BDA2E0B86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net461", "net461", "{5C8AC250-3893-4FAA-AF1E-92EDCF3210BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loria.Modules.Tasks", "netstandard20\Modules\Loria.Modules.Tasks\Loria.Modules.Tasks.csproj", "{D1BC258B-5A65-4D8A-818D-72C794592306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loria.Modules.Help", "netstandard20\Modules\Loria.Modules.Help\Loria.Modules.Help.csproj", "{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,14 @@ Global
 		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1491236C-8D91-40AE-AA42-9AC12FD61A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1BC258B-5A65-4D8A-818D-72C794592306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1BC258B-5A65-4D8A-818D-72C794592306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1BC258B-5A65-4D8A-818D-72C794592306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1BC258B-5A65-4D8A-818D-72C794592306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +86,8 @@ Global
 		{EE1F28CA-7998-47EA-9AD4-A898CD8B5AD1} = {8E111616-D249-45FC-9652-EB2BDA2E0B86}
 		{3CCB99D6-A845-431A-988F-67A1D676D110} = {8E111616-D249-45FC-9652-EB2BDA2E0B86}
 		{1491236C-8D91-40AE-AA42-9AC12FD61A45} = {8E111616-D249-45FC-9652-EB2BDA2E0B86}
+		{D1BC258B-5A65-4D8A-818D-72C794592306} = {8E111616-D249-45FC-9652-EB2BDA2E0B86}
+		{BA1743AC-3110-40F6-8553-BFC8BEDDC3B1} = {8E111616-D249-45FC-9652-EB2BDA2E0B86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {284ABE97-6B50-4022-AAA0-86D3ACD005CA}

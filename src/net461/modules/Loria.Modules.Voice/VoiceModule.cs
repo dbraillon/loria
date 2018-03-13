@@ -7,6 +7,7 @@ namespace Loria.Modules.Voice
     {
         public override string Name => "Voice module";
         public override string Description => "It allows me to speak with you with a digital voice";
+        public override string Keywords => "voice speak home speaker";
 
         public VoiceModule(Engine engine) 
             : base(engine)
