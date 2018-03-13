@@ -2,7 +2,7 @@
 
 Loria works with modules and by building modules, you can hack Loria to the core! 
 
-All modules are available to download with pre-installed nuget module from [nuget.loria.io](http://nuget.loria.io/nuget/Packages).
+All modules are available to download with pre-installed nuget module from [nuget.org](https://www.nuget.org/packages?q=Loria).
 
 ### On premise
 
